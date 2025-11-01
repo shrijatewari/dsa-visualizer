@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #0a0a0f;
+  color: #f8fafc;
+}
+
+/* Neon Interface Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for neon theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00d4ff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #33dfff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+}
+
+/* Selection styling */
+::selection {
+  background: #ff0080;
+  color: #f8fafc;
+}
+
+::-moz-selection {
+  background: #ff0080;
+  color: #f8fafc;
+}
+
+/* Custom slider styling for neon theme */
+.slider-neon::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #00d4ff;
+  cursor: pointer;
+  border: 2px solid #33dfff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.slider-neon::-webkit-slider-thumb:hover {
+  background: #33dfff;
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.slider-neon::-webkit-slider-track {
+  background: #0a0a0f;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #00d4ff;
+}
+
+.slider-neon::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #00d4ff;
+  cursor: pointer;
+  border: 2px solid #33dfff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.slider-neon::-moz-range-track {
+  background: #0a0a0f;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #00d4ff;
+}
+
+/* Neon glow effects */
+.neon-glow-blue {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+.neon-glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Enhanced backdrop blur effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth animations for better UX */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
