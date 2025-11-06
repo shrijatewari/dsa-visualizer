@@ -12,12 +12,14 @@ export default function GraphCanvas() {
     isAddingEdge,
     isSettingTarget,
     edgeFrom,
+    hoveredNode,
     setSourceNode,
     setTargetNode,
     setIsAddingNode,
     setIsAddingEdge,
     setIsSettingTarget,
     setEdgeFrom,
+    setHoveredNode,
     setNodes, 
     setEdges 
   } = useGraphVisualizerStore()
@@ -222,20 +224,28 @@ export default function GraphCanvas() {
           })}
 
           {/* Draw nodes */}
-          {displayNodes.map(node => (
+          {displayNodes.map(node => {
+            const isHovered = hoveredNode === node.id
+            const isHighlighted = currentStepData?.highlightNodes?.includes(node.id)
+            return (
             <g key={node.id}>
               <circle
                 cx={node.x}
                 cy={node.y}
-                r={currentStepData && currentStepData.highlightNodes?.includes(node.id) ? 30 : 25}
+                r={isHighlighted ? 30 : isHovered ? 28 : 25}
                 className={`${getNodeColor(node)} transition-all duration-300 cursor-pointer`}
                 style={{
-                  filter: 'drop-shadow(0 0 12px currentColor)'
+                  filter: isHovered 
+                    ? 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.8))' 
+                    : 'drop-shadow(0 0 12px currentColor)',
+                  transform: isHovered ? 'scale(1.1)' : 'scale(1)'
                 }}
                 onClick={(e) => {
                   e.stopPropagation()
                   handleNodeClick(node.id)
                 }}
+                onMouseEnter={() => setHoveredNode(node.id)}
+                onMouseLeave={() => setHoveredNode(null)}
               />
               
               <text
@@ -265,7 +275,8 @@ export default function GraphCanvas() {
                 </text>
               )}
             </g>
-          ))}
+            )
+          })}
         </svg>
       </div>
 

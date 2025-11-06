@@ -99,6 +99,7 @@ type GraphVisualizerState = {
   isAddingEdge: boolean
   isSettingTarget: boolean
   edgeFrom: string | null
+  hoveredNode: NodeId | null
 
   // Core actions
   setAlgorithm: (algo: GraphAlgorithmType) => void
@@ -136,6 +137,7 @@ type GraphVisualizerState = {
   setIsAddingEdge: (value: boolean) => void
   setIsSettingTarget: (value: boolean) => void
   setEdgeFrom: (nodeId: string | null) => void
+  setHoveredNode: (nodeId: NodeId | null) => void
 
   // Utility actions
   updateMetrics: (step: GraphStep) => void
@@ -178,6 +180,7 @@ export const useGraphVisualizerStore = create<GraphVisualizerState>((set, get) =
   isAddingEdge: false,
   isSettingTarget: false,
   edgeFrom: null,
+  hoveredNode: null,
 
   // Core actions
   setAlgorithm: (algo) => {
@@ -403,6 +406,7 @@ export const useGraphVisualizerStore = create<GraphVisualizerState>((set, get) =
   setIsAddingEdge: (value) => set({ isAddingEdge: value }),
   setIsSettingTarget: (value) => set({ isSettingTarget: value }),
   setEdgeFrom: (nodeId) => set({ edgeFrom: nodeId }),
+  setHoveredNode: (nodeId) => set({ hoveredNode: nodeId }),
 
   // Utility actions
   updateMetrics: (step) => {

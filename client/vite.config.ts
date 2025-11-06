@@ -4,10 +4,8 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Use the repository name as base when building in GitHub Actions for Pages
-  base: (process.env.GITHUB_ACTIONS && process.env.GITHUB_REPOSITORY)
-    ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
-    : '/',
+  // Use root path for Vercel deployment
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {

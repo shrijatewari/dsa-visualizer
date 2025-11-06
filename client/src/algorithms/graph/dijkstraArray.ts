@@ -89,7 +89,6 @@ export const dijkstraArray = (
         if (dist.get(nodeId)! < minDist) {
           minDist = dist.get(nodeId)!
           u = nodeId
-          minIndex = j
           
           steps.push({
             description: `New minimum found: ${u} with distance ${minDist}`,

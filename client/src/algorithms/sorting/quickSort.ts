@@ -1,4 +1,4 @@
-import { Step } from '../../store/visualizerStore'
+import type { Step } from '../../store/visualizerStore'
 
 export const quickSort = (arr: number[]): Step[] => {
   console.log('QUICK SORT FUNCTION CALLED with array:', arr)

@@ -37,7 +37,7 @@ export type Step = {
   // Merge Sort specific properties
   mergeSortPhase?: 'initial' | 'divide' | 'conquer' | 'merge' | 'complete'
   mergeSortLevel?: number
-  mergeSortRange?: { left: number; right: number }
+  mergeSortRange?: { left: number; right: number; mid?: number }
   leftSubarray?: number[]
   rightSubarray?: number[]
   mergeIndices?: { left: number; right: number; mid: number }

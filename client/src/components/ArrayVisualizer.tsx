@@ -72,7 +72,7 @@ export default function ArrayVisualizer() {
     return 'bg-gradient-to-br from-neon-primary to-neon-primary-dark border-neon-primary-light neon-glow-blue' // Default - cyan
   }
 
-  const getBoxHeight = (value: number) => {
+  const _getBoxHeight = (value: number) => {
     const maxValue = Math.max(...currentStepData.data)
     const minValue = Math.min(...currentStepData.data)
     const range = maxValue - minValue

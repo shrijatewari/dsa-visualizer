@@ -1,4 +1,4 @@
-import { Step } from '../../store/visualizerStore'
+import type { Step } from '../../store/visualizerStore'
 
 export const insertionSort = (arr: number[]): Step[] => {
   const steps: Step[] = []

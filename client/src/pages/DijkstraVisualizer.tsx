@@ -5,6 +5,7 @@ import GraphCanvas from '../components/GraphCanvas'
 import GraphPseudocodePanel from '../components/GraphPseudocodePanel'
 import GraphMetricsPanel from '../components/GraphMetricsPanel'
 import GraphAlgorithmInfoModal from '../components/GraphAlgorithmInfoModal'
+import AdjacencyListPanel from '../components/AdjacencyListPanel'
 
 function DijkstraVisualizer() {
   const { 
@@ -29,9 +30,10 @@ function DijkstraVisualizer() {
     <div>
       {/* Main Content */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-        {/* Left Column - Controls */}
-        <div className="xl:col-span-1">
+        {/* Left Column - Controls and Adjacency List */}
+        <div className="xl:col-span-1 space-y-6">
           <GraphControls />
+          <AdjacencyListPanel />
         </div>
 
         {/* Center Column - Visualization */}
